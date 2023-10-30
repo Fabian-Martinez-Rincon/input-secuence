@@ -5,9 +5,11 @@ import pyautogui
 import os
 
 indice = 0
-TITULO_BASE = 'Command Prompt'
+#TITULO_BASE = 'Command Prompt'
+#TITULO_BASE = 'Command Prompt'
+TITULO_BASE = input("Por favor, ingrese una cadena: ")
 CAMPOS = ['SIMBOLO', 'SIMBOLO.1', 'SIMBOLO.2', 'SIMBOLO.3', 'SIMBOLO.4', 'R1', 'R2', 'R3', 'R4', 'R5']
-ARCHIVO_DATOS = './static/data_example.json'
+ARCHIVO_DATOS = 'data_example.json'
 
 def activar_ventana():
     """Espera a que se abra la ventana y la activa"""
@@ -21,7 +23,7 @@ def activar_ventana():
 
 
 def mostrar_registro(datos, boton):
-    #os.system('cls')
+    os.system('cls')
 
     activar_ventana()
 
@@ -44,6 +46,7 @@ def mostrar_registro(datos, boton):
         if campo.startswith('SIMBOLO')
     ])
 
+    print('Nro:' + str(indice + 1))
     print(r_valores_text)
     print(simbolo_valores_text)
     pyautogui.write(str(r_valores_text))
