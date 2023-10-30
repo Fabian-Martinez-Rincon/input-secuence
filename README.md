@@ -30,9 +30,20 @@ Ingresa un conjunto de datos de un Excel a una pestaña elegida por el usuario
     ```bash
     env\Scripts\activate
     ```
-- Instalamos las dependencias
+- Instalamos las dependencias segun nuestra version de python
     ```bash
-    pip install -r requirements.txt
+    pip install -r requirements_3.8.10.txt
+    ```
+    ```bash
+    pip install -r requirements_3.12.0.txt
+    ```
+- Ejecutamos el programa
+    ```bash
+    python app.py
+    ```
+- Desactivamos el entorno virtual (opcional)
+    ```bash
+    deactivate
     ```
 
 ---
