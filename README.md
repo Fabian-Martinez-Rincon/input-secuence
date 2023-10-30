@@ -58,3 +58,10 @@ o tambien
 ```bash
 pip install -r requirements.txt
 ```
+
+
+Despues para ejecutar
+
+```bash
+python app.py
+```
