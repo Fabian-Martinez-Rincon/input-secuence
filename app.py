@@ -7,10 +7,10 @@ import os
 indice = 0
 TITULO_BASE = 'Command Prompt'
 CAMPOS = ['SIMBOLO', 'SIMBOLO.1', 'SIMBOLO.2', 'SIMBOLO.3', 'SIMBOLO.4', 'R1', 'R2', 'R3', 'R4', 'R5']
+ARCHIVO_DATOS = './static/data_example.json'
 
-def mostrar_registro(datos, boton):
-    #os.system('cls')
-
+def activar_ventana():
+    """Espera a que se abra la ventana y la activa"""
     while True:
         ventana = gw.getWindowsWithTitle(TITULO_BASE)
         if ventana:
@@ -19,18 +19,33 @@ def mostrar_registro(datos, boton):
             pyautogui.sleep(1)
     ventana[0].activate()
 
+
+def mostrar_registro(datos, boton):
+    #os.system('cls')
+
+    activar_ventana()
+
     global indice
     registro = datos[indice]
-    valores = [registro[campo] for campo in CAMPOS]
-    r_valores = {campo: valores[i] for i, campo in enumerate(CAMPOS) if campo.startswith('R')}
-    simbolo_valores = {campo: valores[i] for i, campo in enumerate(CAMPOS) if campo.startswith('SIMBOLO')}
+    valores = [
+        registro[campo] 
+        for campo in CAMPOS
+        ]
 
-    r_valores_text = ", ".join([f'{valor}' for campo, valor in r_valores.items()])
-    simbolo_valores_text = ", ".join([f'{valor}' for campo, valor in simbolo_valores.items()])
-    
+    r_valores_text = ", ".join([
+        str(valores[i]) 
+        for i, campo in enumerate(CAMPOS) 
+        if campo.startswith('R')
+    ])
+
+    simbolo_valores_text = ", ".join([
+        str(valores[i]) 
+        for i, campo in enumerate(CAMPOS) 
+        if campo.startswith('SIMBOLO')
+    ])
+
     print(r_valores_text)
     print(simbolo_valores_text)
-
     pyautogui.write(str(r_valores_text))
     pyautogui.press('enter')
     
@@ -39,16 +54,12 @@ def mostrar_registro(datos, boton):
         boton.config(state=tk.DISABLED)
 
 def main():
-    with open('./static/datos_filtrados.json', 'r') as archivo:
+    with open(ARCHIVO_DATOS, 'r') as archivo:
         datos = json.load(archivo)
 
-    CAMPOS = ['SIMBOLO', 'SIMBOLO.1', 'SIMBOLO.2', 'SIMBOLO.3', 'SIMBOLO.4', 'R1', 'R2', 'R3', 'R4', 'R5']
     root = tk.Tk()
-    root.title('Datos filtrados')
-    root.geometry('100x250')
-
     boton = tk.Button(root, text='Siguiente', command=lambda: mostrar_registro(datos, boton))
-    boton.grid(row=len(CAMPOS), column=0, columnspan=2)
+    boton.grid(row=1, column=0, columnspan=2)
 
     mostrar_registro(datos, boton)
 
