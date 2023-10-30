@@ -93,3 +93,26 @@ pip install pyinstaller
 ```
 pyinstaller --onefile app.py
 ```
+
+
+### Ejecutar
+
+
+```
+.\mi_entorno_virtual\Scripts\activate
+mi_entorno_virtual\Scripts\activate
+```
+
+### Pasos Finales
+
+```bash
+python -m venv mi_entorno_virtual
+```
+
+```bash
+mi_entorno_virtual\Scripts\activate
+```
+
+```bash
+pip install -r requirements.txt
+```
