@@ -14,16 +14,14 @@ def activar_ventana():
     while True:
         ventana = gw.getWindowsWithTitle(TITULO_BASE)
         if ventana:
-            break  
+            return ventana[0]  # Devolver la ventana si se encontró
         else:
+            print("La ventana no está abierta. Esperando...")
             pyautogui.sleep(1)
-    ventana[0].activate()
 
 
 def mostrar_registro(datos, boton):
     os.system('cls')
-
-    activar_ventana()
 
     global indice
     registro = datos[indice]
@@ -44,9 +42,12 @@ def mostrar_registro(datos, boton):
         if campo.startswith('SIMBOLO')
     ])
 
-    print('Nro:' + str(indice + 1))
+    print('Datos Confirmados:')
+    print('Indice:' + str(indice + 1))
     print(r_valores_text)
     print(simbolo_valores_text)
+    ventana = activar_ventana()
+    ventana.activate()
     pyautogui.write(str(r_valores_text))
     pyautogui.press('enter')
     
@@ -61,9 +62,6 @@ def main():
     root = tk.Tk()
     boton = tk.Button(root, text='Siguiente', command=lambda: mostrar_registro(datos, boton))
     boton.grid(row=1, column=0, columnspan=2)
-
-    mostrar_registro(datos, boton)
-
     root.mainloop()
 
 if __name__ == '__main__':

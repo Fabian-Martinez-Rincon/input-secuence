@@ -32,10 +32,10 @@ Ingresa un conjunto de datos de un Excel a una pestaña elegida por el usuario
     ```
 - Instalamos las dependencias segun nuestra version de python
     ```bash
-    pip install -r requirements_3.8.10.txt
+    pip install -r ./static/requirements_3.8.10.txt
     ```
     ```bash
-    pip install -r requirements_3.12.0.txt
+    pip install -r ./static/requirements_3.12.0.txt
     ```
 - Ejecutamos el programa
     ```bash
