@@ -43,7 +43,15 @@ Ingresa un conjunto de datos de un Excel a una pestaña elegida por el usuario
     ```
 - Desactivamos el entorno virtual (opcional)
     ```bash
-    deactivate
+    deactivateW	W	W	W	W
+F	F	F	F	F
+F	F	F	F	W
+F	F	F	W	F
+F	F	F	W	W
+F	F	W	F	F
+F	F	W	F	F
+F	F	W	F	W
+
     ```
 
 ---

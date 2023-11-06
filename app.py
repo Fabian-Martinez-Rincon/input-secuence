@@ -5,11 +5,10 @@ import pyautogui
 import os
 
 TITULO_BASE = input("Por favor, ingrese una cadena: ")
-INDICE_PRINT = int(input("Fila donde empiezan las variantes del excel: "))
 INDICE = int(input("Elemento a comenzar 0..10 por ejemplo: "))
 
 CAMPOS = ['SIMBOLO', 'SIMBOLO.1', 'SIMBOLO.2', 'SIMBOLO.3', 'SIMBOLO.4', 'R1', 'R2', 'R3', 'R4', 'R5']
-ARCHIVO_DATOS = './make_json/datos.json'
+ARCHIVO_DATOS = './static/json/datos.json'
 
 def activar_ventana():
     """Espera a que se abra la ventana y la activa"""
@@ -45,7 +44,7 @@ def mostrar_registro(datos, boton):
     ])
 
     print('Datos Confirmados:')
-    print('INDICE EXCEL:' + str(INDICE + INDICE_PRINT))
+    print('INDICE: ' + str(INDICE))
     print(r_valores_text)
     print(simbolo_valores_text)
     ventana = activar_ventana()
