@@ -1,5 +1,4 @@
 processed_json/*.json
-base_excel/*.xlsx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
