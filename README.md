@@ -57,3 +57,9 @@ Ingresa un conjunto de datos de un Excel a una pestaña elegida por el usuario
 ### Manual de Uso
 
 - Ingresamos los archivos excel que queremos procesar en la carpeta `base_excel`
+
+
+
+https://github.com/Fabian-Martinez-Rincon/input-secuence/assets/55964635/0a2f08f5-4be1-4679-ba5c-8010bbeab6ae
+
+
